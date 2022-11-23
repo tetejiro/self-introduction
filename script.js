@@ -5,57 +5,52 @@ window.addEventListener('DOMContentLoaded', function() {
 
 window.addEventListener('scroll', function() {
   // section1
-  if($(this).scrollTop() < 500) {
+  if($(this).scrollTop() < 600) {
     $('section').css('background', '#709ed0');
-    // nav
-    $('nav').css('background', 'rgba(181,203,197,0.6)');//#709ed0
+    $('nav').css('background', 'rgba(181,203,197,0.6)');
     $('li').each(function(idx, val) {
       if(idx > 0) {
         val.style.border = 'none';
       }
     });
-    $('li.list-home').css('border-bottom', 'white solid 1px');
+    $('li.list-home').css('border-bottom', 'white solid 2px');
   // section2
-  } else if(500 < $(this).scrollTop() && $(this).scrollTop() < 1250) {
+  } else if(600 < $(this).scrollTop() && $(this).scrollTop() < 1250) {
     $('section').css('background', '#acbedd');
-    // nav
     $('nav').css('background', '#acbedd');
     $('li').each(function(idx, val) {
       if(idx > 1) {
         val.style.border = 'none';
       }
     });
-    $('li.list-section2').css('border-bottom', 'white solid 1px');
+    $('li.list-section2').css('border-bottom', 'white solid 2px');
   }
   // section3
-  if(1250 < $(this).scrollTop() && $(this).scrollTop() < 1800) {
+  if(1250 < $(this).scrollTop() && $(this).scrollTop() < 1900) {
     $('section').css('background', '#f5d8c8');
-    // nav
     $('nav').css('background', '#f5d8c8');
     $('li').each(function(idx, val) {
       if(idx > 2) {
         val.style.border = 'none';
       }
     });
-    $('li.list-section3').css('border-bottom', 'white solid 1px');
+    $('li.list-section3').css('border-bottom', 'white solid 2px');
   // section4
-  } else if(1800 < $(this).scrollTop() && $(this).scrollTop() < 2400) {
+  } else if(1900 < $(this).scrollTop() && $(this).scrollTop() < 2550) {
     $('section').css('background', '#dfe2e3');
-    // nav
     $('nav').css('background', '#dfe2e3');
     $('li').each(function(idx, val) {
       if(idx > 3) {
         val.style.border = 'none';
       }
     });
-    $('li.list-section4').css('border-bottom', 'white solid 1px');
+    $('li.list-section4').css('border-bottom', 'white solid 2px');
   // section5
-  } else if(2400 < $(this).scrollTop()) {
+  } else if(2550 < $(this).scrollTop()) {
     $('section').css('background', '#c6ccdf');
-    // nav
     $('nav').css('background', '#c6ccdf');
     $('li').each(function(idx, val) {
-      $(val).css('border-bottom', '1px solid white');
+      $(val).css('border-bottom', '2px solid white');
     });
   }
 });
