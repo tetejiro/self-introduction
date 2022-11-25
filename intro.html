@@ -14,11 +14,11 @@
 <body>
   <nav>
     <ul>
-      <li class="list-home">ホーム</li>
-      <li class="list-section2">セクション2</li>
-      <li class="list-section3">セクション3</li>
-      <li class="list-section4">セクション4</li>
-      <li class="list-section5">セクション5</li>
+      <li class="list-section1">ホーム</li>
+      <li class="list-section2">自己紹介</li>
+      <li class="list-section3">経験言語</li>
+      <li class="list-section4">Works</li>
+      <li class="list-section5">Contact</li>
     </ul>
   </nav>
   <section>
@@ -34,8 +34,9 @@
     <p>JavaScript(Jquery)でSPAページを構築する業務に従事しました。</p>
   </section>
   <section>
-    <div>経験言語</div>
+    <div class="experience">経験言語</div>
     <p>JavaScript … 実務経験あり</p>
+    <p>Jquery … 実務経験あり</p>
     <p>Apex … 実務経験あり</p>
     <p>SOQL … 実務経験あり</p>
     <p>Visualforce … 実務経験あり</p>
@@ -45,12 +46,31 @@
   </section>
   <section class="section4">
     <p>Works</p>
-    <a href="https://yuki.bitter.jp/portfolio/registration/index.php">
-      <img src=".//image/portfolio-image.png">
-    </a>
-    <p>し つ も ん</p>
+    <div class="flx">
+      <div>
+        <a href="https://yuki.bitter.jp/portfolio/registration/index.php" target="_blank" rel=”noopener noreferrer”>
+          <img src=".//image/portfolio-image.png">
+        </a>
+        <p><strong>し つ も ん</strong></p>
+        <div class="explanation">
+          <p>「忙しそうでいつ質問してもいいか分からない」</p>
+          <p>「どちらかというと明日質問してくれた方が助かるなあ」</p>
+          <p>そんな悩みを解消するために、質問する人・される人が空気を読む必要なく</p>
+          <p>お互いの状況を把握した上で、ストレスなく</p>
+          <p>質問ができるようにしたいと思い作りました。</p>
+          <p>（<strong>使用言語：</strong>HTML/CSS・PHP・JavaScript・MySQL）</p>
+        </div>
+      </div>
+      <div>
+        <a href="http://localhost/self-introduction/intro.html" target="_blank" rel=”noopener noreferrer”>
+          <img src=".//image/portfolio-image2.png">
+        </a>
+        <p>自己紹介サイト</p>
+        <p class="explanation">（<strong>使用言語：</strong>HTML/CSS・JavaScript(Jquery)）</p>
+      </div>
+    </div>
   </section>
-  <section>ThankYou!</section>
+  <section class="section5">ThankYou!</section>
 </body>
 
 </html>

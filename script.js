@@ -13,7 +13,7 @@ window.addEventListener('scroll', function() {
         val.style.border = 'none';
       }
     });
-    $('li.list-home').css('border-bottom', '2px solid white');
+    $('li.list-section1').css('border-bottom', '2px solid white');
   // section2
   } else if(600 < $(this).scrollTop() && $(this).scrollTop() < 1250) {
     $('section').css('background', '#dfe2e3');
