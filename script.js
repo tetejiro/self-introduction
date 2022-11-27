@@ -1,8 +1,3 @@
-window.addEventListener('DOMContentLoaded', function() {
-  console.log('load');
-  this.$(this).scrollTop(0);
-})
-
 window.addEventListener('scroll', function() {
   // section1
   if($(this).scrollTop() < 600) {
@@ -59,4 +54,58 @@ window.addEventListener('scroll', function() {
     });
     $('li.list-section5').css('border-bottom', 'white solid 2px');
   }
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+  let moveTop;
+  $('.list-section1').on('click', function() {
+    moveTop = ($('.section1').offset().top);
+    scrollTo(0, moveTop);
+    $('li').css('border-bottom', 'white solid 2px');
+    $('li').each(function(idx, val) {
+      if(idx > 0) {
+        val.style.border = 'none';
+      }
+    });
+  });
+  $('.list-section2').on('click', function() {
+    moveTop = ($('.section2').offset().top);
+    scrollTo(0, moveTop);
+    $('li').css('border-bottom', 'white solid 2px');
+    $('li').each(function(idx, val) {
+      if(idx > 1) {
+        val.style.border = 'none';
+      }
+    });
+  });
+  $('.list-section3').on('click', function() {
+    moveTop = ($('.section3').offset().top);
+    scrollTo(0, moveTop);
+    $('li').css('border-bottom', 'white solid 2px');
+    $('li').each(function(idx, val) {
+      if(idx > 2) {
+        val.style.border = 'none';
+      }
+    });
+  });
+  $('.list-section4').on('click', function() {
+    moveTop = ($('.section4').offset().top);
+    scrollTo(0, moveTop);
+    $('li').css('border-bottom', 'white solid 2px');
+    $('li').each(function(idx, val) {
+      if(idx > 3) {
+        val.style.border = 'none';
+      }
+    });
+  });
+  $('.list-section5').on('click', function() {
+    moveTop = ($('.section5').offset().top);
+    scrollTo(0, moveTop);
+    $('li').css('border-bottom', 'white solid 2px');
+    $('li').each(function(idx, val) {
+      if(idx > 4) {
+        val.style.border = 'none';
+      }
+    });
+  });
 });
