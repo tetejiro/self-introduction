@@ -1,3 +1,5 @@
+/* スクロール時の背景色・ナビの下線を付ける */
+
 window.addEventListener('scroll', function() {
   // section1
   if($(this).scrollTop() < 600) {
@@ -55,6 +57,8 @@ window.addEventListener('scroll', function() {
     $('li.list-section5').css('border-bottom', 'white solid 2px');
   }
 });
+
+/* 自動スクロール機能・ナビの下線を付ける */
 
 window.addEventListener('DOMContentLoaded', function() {
   let moveTop;
