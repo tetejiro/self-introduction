@@ -41,7 +41,23 @@ section > div:not(:nth-child(2)) {
 }
 
 section > h3 {
-  padding-top: 30%;
+  padding-top: 20%;
+}
+
+.container {
+  display: flex;
+  margin-left: 10%;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.container > div {
+  width: 30%;
+  margin-bottom: 2rem;
+}
+
+.lng {
+  font-size: 1.2rem;
 }
 
 .section4 > p:first-child {
@@ -49,7 +65,13 @@ section > h3 {
 }
 
 .experience {
-  padding-top: 15% !important;
+  padding-top: 5% !important;
+  padding-bottom: 3%;
+}
+
+h5 {
+  font-weight: 100;
+  padding: 0 5%;
 }
 
 .explanation {
