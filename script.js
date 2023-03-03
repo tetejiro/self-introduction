@@ -3,7 +3,9 @@
 window.addEventListener('scroll', function() {
   // section1
   if($(this).scrollTop() < 600) {
+    // 背景色の変更
     $('section').css('background', '#c6ccdf');
+    // 該当のナビの下線を付ける
     $('nav').css('background', '#c6ccdf');
     $('li').each(function(idx, val) {
       if(idx > 0) {
@@ -11,6 +13,7 @@ window.addEventListener('scroll', function() {
       }
     });
     $('li.list-section1').css('border-bottom', '2px solid white');
+
   // section2
   } else if(600 < $(this).scrollTop() && $(this).scrollTop() < 1250) {
     $('section').css('background', '#dfe2e3');
@@ -63,8 +66,10 @@ window.addEventListener('scroll', function() {
 window.addEventListener('DOMContentLoaded', function() {
   let moveTop;
   $('.list-section1').on('click', function() {
+    // 該当のポイントまで遷移させる
     moveTop = ($('.section1').offset().top);
     scrollTo(0, moveTop);
+    // 該当のナビの下線を付ける
     $('li').css('border-bottom', 'white solid 2px');
     $('li').each(function(idx, val) {
       if(idx > 0) {
@@ -72,6 +77,7 @@ window.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
   $('.list-section2').on('click', function() {
     moveTop = ($('.section2').offset().top);
     scrollTo(0, moveTop);
@@ -82,6 +88,7 @@ window.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
   $('.list-section3').on('click', function() {
     moveTop = ($('.section3').offset().top);
     scrollTo(0, moveTop);
@@ -92,6 +99,7 @@ window.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
   $('.list-section4').on('click', function() {
     moveTop = ($('.section4').offset().top);
     scrollTo(0, moveTop);
@@ -102,6 +110,7 @@ window.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
   $('.list-section5').on('click', function() {
     moveTop = ($('.section5').offset().top);
     scrollTo(0, moveTop);
@@ -112,4 +121,23 @@ window.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+});
+
+
+// works のアニメーションクラス付与
+window.addEventListener('scroll', function() {
+  if($(this).scrollTop() < 1500) {
+    $('.section4 > p').removeClass("turning");
+    console.log('111111');
+  }
+  if(1500 < $(this).scrollTop() && $(this).scrollTop() < 2200) {
+    if(!$('.section4 > p').hasClass('turning')) {
+      $('.section4 > p').addClass("turning");
+    }
+    console.log('22222');
+  }
+  if(2200 < $(this).scrollTop()) {
+    $('.section4 > p').removeClass("turning");
+    console.log('33333');
+  }
 });
