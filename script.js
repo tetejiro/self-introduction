@@ -128,16 +128,13 @@ window.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('scroll', function() {
   if($(this).scrollTop() < 1500) {
     $('.section4 > p').removeClass("turning");
-    console.log('111111');
   }
   if(1500 < $(this).scrollTop() && $(this).scrollTop() < 2200) {
     if(!$('.section4 > p').hasClass('turning')) {
       $('.section4 > p').addClass("turning");
     }
-    console.log('22222');
   }
   if(2200 < $(this).scrollTop()) {
     $('.section4 > p').removeClass("turning");
-    console.log('33333');
   }
 });
