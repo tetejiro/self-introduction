@@ -8,12 +8,28 @@ $(window).on('DOMContentLoaded', function(){
 
   /* ナビ押下時：自動スクロール機能・ナビの下線を付ける */
   $(function(){
-    let list_y=[50, 645, 1300, 1960, 2800];
+
+    // 位置取得
+    let list_y = [];
+    list_y.push(100); // section1微調整のため
+    for(let i=1; i<$('.list-section').length-1; i++) {
+      list_y.push($('section').eq(i).offset().top - 45);
+    }
+    list_y.push($('section').eq(4).offset().top); // section5微調整のため
+
+    // クリック時動作
     $('.list-section').on('click', function() {
-      let index = $('.list-section').index($(this));
-      scrollTo(0, list_y[index]);
-      $('.list-section').css({'border-bottom':'solid 0px'});
-      $(this).css({'border-bottom':'solid 2px'});
+      // スクロール
+      let list_index = $('.list-section').index($(this));
+      scrollTo(0, list_y[list_index]);
+
+      // 下線
+      $('li').css('border-bottom', 'none'); // 外す
+      for(let i=0; i<=list_index; i++) {
+        console.log('list_index=>' + list_index);
+        console.log($('li')[i]);
+        $('li')[i].style.borderBottom = 'white solid 2px'; // 付ける
+      }
     });
   });
 
