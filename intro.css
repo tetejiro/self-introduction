@@ -23,6 +23,7 @@ ul {
 li {
   margin-right: 2.5%;
   width: fit-content;
+  cursor: pointer;
 }
 
 section {
@@ -41,7 +42,7 @@ section > div:not(:nth-child(2)) {
 }
 
 section > h3 {
-  padding-top: 20%;
+  padding-top: 10%;
   padding-bottom: 5%;
   font-size: 2rem;
   opacity: 0.725;
@@ -63,12 +64,12 @@ section > h3 {
   font-size: 1.2rem;
 }
 
-.section2 > img {
+.face-image {
   width: auto;
   height: 2.5rem;
 }
 
-.section4 > p:first-child {
+.works-title {
   padding: 5%;
 }
 
@@ -95,15 +96,15 @@ img {
   height: 80%;
 }
 
-.section5 {
+.contact-section {
   padding-top: 10%;
 }
 
-.section5 > p > a {
+.contact-section > p > a {
   text-decoration: none;
 }
 
-.section5 > p {
+.contact-section > p {
   margin-top: 10%;
   margin-bottom: 10%;
 }
