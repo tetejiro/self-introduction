@@ -2,7 +2,9 @@ let bg_color;
 let idx;
 let list_y = [];
 
-/* 初期処理 */
+/**
+ * 初期処理
+ */
 $(window).on('DOMContentLoaded', function(){
 
   /* 背景色・ナビの色の適用 */
@@ -18,7 +20,9 @@ $(window).on('DOMContentLoaded', function(){
 });
 
 
-/* ナビボタン押下時処理 */
+/**
+ * ナビボタン押下時処理
+ */
 $(function(){
 
   $('.list-section').on('click', function() {
@@ -35,30 +39,34 @@ $(function(){
 
 });
 
-
-/* スクロール時処理 */
+/**
+ * スクロール時処理
+ */
 $(document).on('scroll', function() {
 
   /* 背景色・ナビの色の適用 */
   changeColor();
 
-  /* works のアニメーションクラス付与 */
-  if($(this).scrollTop() < 1500) {
+  /* works のアニメーションクラス */
+
+  // 削除
+  if($(this).scrollTop() < 1500 || 2200 < $(this).scrollTop()) {
     $('.works-title').removeClass("turning");
   }
+
+  // 付与
   if(1500 < $(this).scrollTop() && $(this).scrollTop() < 2200) {
     if(!$('.works-title').hasClass('turning')) {
       $('.works-title').addClass("turning");
     }
   }
-  if(2200 < $(this).scrollTop()) {
-    $('.works-title').removeClass("turning");
-  }
 
 });
 
 
-/* 色・下線の適用処理 */
+/**
+ * 色・下線の適用処理・ works アニメーション付与
+ */
 function changeColor () {
   /* 位置による適切な色の取得 */
   $.each($('section'), () => {
