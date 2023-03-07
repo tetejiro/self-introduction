@@ -1,39 +1,42 @@
 let bg_color;
 let idx;
+let list_y = [];
 
-/*  １．初期表示時の処理 */
+/* 初期処理 */
 $(window).on('DOMContentLoaded', function(){
 
   /* 背景色・ナビの色の適用 */
   changeColor();
 
-  /* ナビ押下時処理 */
-  $(function(){
+  /* 各セクションの位置情報取得・配列に入れる */
+  list_y.push(100); // section1
+  for(let i=1; i<$('.list-section').length-1; i++) {
+    list_y.push($('section').eq(i).offset().top - 45); // section2~4
+  }
+  list_y.push($('section').eq(4).offset().top); // section5
 
-    /* ボタン押下後の位置情報取得 */
-    let list_y = [];
-    list_y.push(100); // section1のスクロール位置微調整のため
-    for(let i=1; i<$('.list-section').length-1; i++) {
-      list_y.push($('section').eq(i).offset().top - 45);
-    }
-    list_y.push($('section').eq(4).offset().top); // section5のスクロール位置微調整のため
+});
 
+
+/* ナビボタン押下時処理 */
+$(function(){
+
+  $('.list-section').on('click', function() {
+    let list_index = $('.list-section').index($(this));
     /* スクロール処理 */
-    $('.list-section').on('click', function() {
-      let list_index = $('.list-section').index($(this));
-      scrollTo(0, list_y[list_index]);
+    scrollTo(0, list_y[list_index]);
 
-      /* 下線付与 */
-      $('li').css('border-bottom', 'none'); // 外す
-      for(let i=0; i<=list_index; i++) {
-        $('li')[i].style.borderBottom = 'white solid 2px'; // 付ける
-      }
-    });
+    /* 下線付与 */
+    $('li').css('border-bottom', 'none'); // 外す
+    for(let i=0; i<=list_index; i++) {
+      $('li')[i].style.borderBottom = 'white solid 2px'; // 付ける
+    }
   });
 
 });
 
-/* ２．スクロール時の処理 */
+
+/* スクロール時処理 */
 $(document).on('scroll', function() {
 
   /* 背景色・ナビの色の適用 */
