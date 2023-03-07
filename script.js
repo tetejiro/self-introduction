@@ -1,33 +1,31 @@
 let bg_color;
 let idx;
 
+/*  １．初期表示時の処理 */
 $(window).on('DOMContentLoaded', function(){
 
-  /* 初期表示時点での色の適用 */
+  /* 背景色・ナビの色の適用 */
   changeColor();
 
-  /* ナビ押下時：自動スクロール機能・ナビの下線を付ける */
+  /* ナビ押下時処理 */
   $(function(){
 
-    // 位置取得
+    /* ボタン押下後の位置情報取得 */
     let list_y = [];
-    list_y.push(100); // section1微調整のため
+    list_y.push(100); // section1のスクロール位置微調整のため
     for(let i=1; i<$('.list-section').length-1; i++) {
       list_y.push($('section').eq(i).offset().top - 45);
     }
-    list_y.push($('section').eq(4).offset().top); // section5微調整のため
+    list_y.push($('section').eq(4).offset().top); // section5のスクロール位置微調整のため
 
-    // クリック時動作
+    /* スクロール処理 */
     $('.list-section').on('click', function() {
-      // スクロール
       let list_index = $('.list-section').index($(this));
       scrollTo(0, list_y[list_index]);
 
-      // 下線
+      /* 下線付与 */
       $('li').css('border-bottom', 'none'); // 外す
       for(let i=0; i<=list_index; i++) {
-        console.log('list_index=>' + list_index);
-        console.log($('li')[i]);
         $('li')[i].style.borderBottom = 'white solid 2px'; // 付ける
       }
     });
@@ -35,9 +33,10 @@ $(window).on('DOMContentLoaded', function(){
 
 });
 
+/* ２．スクロール時の処理 */
 $(document).on('scroll', function() {
 
-  /* スクロール時点での色の適用 */
+  /* 背景色・ナビの色の適用 */
   changeColor();
 
   /* works のアニメーションクラス付与 */
