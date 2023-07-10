@@ -12,7 +12,7 @@ $(window).on('DOMContentLoaded', function(){
 
   /* 各セクションの位置情報取得・配列に入れる */
   list_y.push(100); // section1
-  for(let i=1; i<$('.list-section').length-1; i++) {
+  for (let i=1; i<$('.list-section').length-1; i++) {
     list_y.push($('section').eq(i).offset().top - 45); // section2~4
   }
   list_y.push($('section').eq(4).offset().top); // section5
@@ -50,12 +50,12 @@ $(document).on('scroll', function() {
   /* works のアニメーションクラス */
 
   // 削除
-  if($(this).scrollTop() < 1500 || 2200 < $(this).scrollTop()) {
+  if ($(this).scrollTop() < 1500 || 2200 < $(this).scrollTop()) {
     $('.works-title').removeClass("turning");
   }
 
   // 付与
-  if(1500 < $(this).scrollTop() && $(this).scrollTop() < 2200) {
+  if (1500 < $(this).scrollTop() && $(this).scrollTop() < 2200) {
     if(!$('.works-title').hasClass('turning')) {
       $('.works-title').addClass("turning");
     }
@@ -72,31 +72,32 @@ function changeColor () {
   $.each($('section'), () => {
 
     // section1
-    if(0 < $(this).scrollTop() && $(this).scrollTop() < 600) {
+    if (0 < $(this).scrollTop() && $(this).scrollTop() < 600) {
       bg_color = '#c6ccdf';
       idx = 0;
     }
 
     // section2
-    else if(600 < $(this).scrollTop() && $(this).scrollTop() < 1250) {
+    else if (600 < $(this).scrollTop() && $(this).scrollTop() < 1250) {
       bg_color = '#dfe2e3';
       idx = 1;
     }
 
     // section3
-    else if(1250 < $(this).scrollTop() && $(this).scrollTop() < 1900) {
+    else if (1250 < $(this).scrollTop() && $(this).scrollTop() < 1900) {
       bg_color = '#f5d8c8';
       idx = 2;
     }
 
     // section4
-    else if(1900 < $(this).scrollTop() && $(this).scrollTop() < 2550) {
+    else if (1900 < $(this).scrollTop() && $(this).scrollTop() < 2400) {
+      console.log(window.scrollY);
       bg_color =  '#acbedd';
       idx = 3;
     }
 
     // section5
-    else if(2550 < $(this).scrollTop()) {
+    else if (2400 <= $(this).scrollTop()) {
       bg_color =  '#709ed0';
       idx = 4;
     }
@@ -107,7 +108,7 @@ function changeColor () {
 
     // 下線
     $('li').css('border-bottom', 'none'); // 外す
-    for(let i=0; i<=idx; i++) {
+    for (let i=0; i<=idx; i++) {
       $('li')[i].style.borderBottom = 'white solid 2px'; // 付ける
     }
   });
