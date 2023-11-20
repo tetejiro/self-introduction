@@ -109,6 +109,11 @@ img {
   margin-bottom: 10%;
 }
 
+/* 赤文字 */
+.red {
+  color: red;
+}
+
 /* ボタン */
 .btn,
 a.btn,
